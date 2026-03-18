@@ -2,10 +2,10 @@
 
 terraform {
   cloud {
-    organization = "acme-corp-demo"
+    organization = "Elio"
 
     workspaces {
-      name = "acme-prod-azure"
+      name = "acme-cloud20-demo-elio-prod-azure"
     }
   }
 
