@@ -4,7 +4,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.0"
+      version = "~> 4.0"
     }
   }
 }
@@ -32,7 +32,7 @@ resource "azurerm_resource_group" "acme" {
 # ── Network (private registry module) ────────────────────────────────────────
 
 module "azure_network" {
-  source  = "app.terraform.io/acme-corp-demo/azure-network/azurerm"
+  source  = "app.terraform.io/Elio/azure-network/azurerm"
   version = "1.0.0"
 
   environment         = var.environment
