@@ -19,7 +19,7 @@ provider "google" {
 # ── Network (private registry module) ────────────────────────────────────────
 
 module "gcp_network" {
-  source  = "app.terraform.io/acme-corp-demo/gcp-network/google"
+  source  = "app.terraform.io/Elio/gcp-network/google"
   version = "1.0.0"
 
   environment = var.environment
