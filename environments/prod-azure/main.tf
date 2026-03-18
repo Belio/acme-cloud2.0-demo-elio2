@@ -25,7 +25,7 @@ resource "azurerm_resource_group" "acme" {
     Environment = var.environment
     ManagedBy   = "terraform"
     Initiative  = "cloud2"
-    CostCenter  = "cost control2"
+    CostCenter  = "finance"
   }
 }
 
