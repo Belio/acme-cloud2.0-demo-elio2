@@ -46,3 +46,21 @@ resource "google_storage_bucket" "orders" {
     initiative  = "cloud2"
   }
 }
+
+resource "google_storage_bucket" "sales" {
+  name          = "acme-sales-${var.environment}-${var.gcp_project_id}"
+  location      = upper(var.gcp_region)
+  force_destroy = false
+
+  versioning {
+    enabled = true
+  }
+
+  uniform_bucket_level_access = true
+
+  labels = {
+    environment = var.environment
+    managed_by  = "terraform"
+    initiative  = "cloud2"
+  }
+}
