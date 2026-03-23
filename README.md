@@ -4,7 +4,7 @@ Terraform infrastructure for ACME Corp — managed via **Terraform Cloud**.
 
 ## Cloud 2.0 Initiative
 
-This repo implements the CIO's Cloud 2.0 provisioning standard:
+This repo implements the Cloud 2.0 provisioning standard:
 - **One platform** — Terraform Cloud manages all environments
 - **Reusable modules** — published to the private TFC module registry
 - **Two clouds** — Microsoft Azure and Google Cloud Platform
