@@ -59,12 +59,13 @@ resource "azurerm_storage_account" "orders" {
   }
 }
 
-resource "azurerm_service_plan" "acme" {
-  name                = "acme-asp-${var.environment}"
-  location            = azurerm_resource_group.acme.location
-  resource_group_name = azurerm_resource_group.acme.name
-  os_type             = "Linux"
-  sku_name            = "S1"
+resource "azurerm_managed_disk" "demo" {
+  name                 = "acme-disk-${var.environment}"
+  location             = azurerm_resource_group.acme.location
+  resource_group_name  = azurerm_resource_group.acme.name
+  storage_account_type = "Standard_LRS"
+  create_option        = "Empty"
+  disk_size_gb         = 64
 
   tags = {
     Environment = var.environment
