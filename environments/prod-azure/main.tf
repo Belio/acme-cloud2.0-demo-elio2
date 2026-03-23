@@ -58,3 +58,18 @@ resource "azurerm_storage_account" "orders" {
     Initiative  = "cloud2"
   }
 }
+
+resource "azurerm_storage_account" "sales" {
+  name                     = "acmesales${var.environment}"
+  resource_group_name      = azurerm_resource_group.acme.name
+  location                 = azurerm_resource_group.acme.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  min_tls_version          = "TLS1_2"
+
+  tags = {
+    Environment = var.environment
+    ManagedBy   = "terraform"
+    Initiative  = "cloud2"
+  }
+}
