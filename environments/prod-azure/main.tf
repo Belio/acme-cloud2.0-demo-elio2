@@ -59,16 +59,12 @@ resource "azurerm_storage_account" "orders" {
   }
 }
 
-
-resource "azurerm_app_service_plan" "acme" {
+resource "azurerm_service_plan" "acme" {
   name                = "acme-asp-${var.environment}"
   location            = azurerm_resource_group.acme.location
   resource_group_name = azurerm_resource_group.acme.name
-
-  sku {
-    tier = "Standard"
-    size = "S1"
-  }
+  os_type             = "Linux"
+  sku_name            = "S1"
 
   tags = {
     Environment = var.environment
